@@ -8,7 +8,8 @@ void tahu() {
   log("data : $i");
 }
 
-Future<void> dialogku(context) async {
+Future<void> dialogku(context, id) async {
+  log("id = $id");
   return showDialog<void>(
     context: context,
     barrierDismissible: false, // user must tap button!
@@ -28,6 +29,7 @@ Future<void> dialogku(context) async {
             child: Text('Approve'),
             onPressed: () {
               Navigator.of(context).pop();
+              log("approve");
             },
           ),
         ],

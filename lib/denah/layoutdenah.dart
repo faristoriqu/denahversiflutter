@@ -91,9 +91,15 @@ class _MyHomePageState extends State<MyHomePage> {
             // ignore: deprecated_member_use
             FlatButton(
                 onPressed: () {
-                  dialogku(context);
+                  String id = "apa";
+                  dialogku(context, id);
                 },
-                child: Text('coba'))
+                child: Column(
+                  children: <Widget>[
+                    Image.asset("assets/images/jalan.png"),
+                    Text("Coba")
+                  ],
+                ))
           ],
         ),
       ),
