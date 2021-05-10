@@ -17,15 +17,15 @@ Future<void> dialogku(context, okelah) async {
     barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Ini Adalah '),
+        title: Text('Kavling No 1 '),
         content: SingleChildScrollView(
           child: ListBody(
-            children: <Widget>[Text('Jalan ini tidak dijual')],
+            children: <Widget>[Text('Ingin Beli ?')],
           ),
         ),
         actions: <Widget>[
           TextButton(
-            child: Text('Oke'),
+            child: Text('Beli'),
             onPressed: () {
               Navigator.of(context).pop();
               okelah('assets/images/ataskuning.png');

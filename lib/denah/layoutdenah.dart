@@ -105,30 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
             // ),
             GestureDetector(
                 onTap: () {
-                  /**
-                  return showDialog<void>(
-                      context: context,
-                      barrierDismissible: false, // user must tap button!
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text('Kavling no 1 '),
-                          content: SingleChildScrollView(
-                            child: ListBody(
-                              children: <Widget>[Text('Ingin Beli ?')],
-                            ),
-                          ),
-                          actions: <Widget>[
-                            TextButton(
-                              child: Text('Oke'),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                                pathChange(atas);
-                              },
-                            ),
-                          ],
-                        );
-                      });
-                       */
                   dialogku(context, pathChange);
                 },
                 child: Column(
