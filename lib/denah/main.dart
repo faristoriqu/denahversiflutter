@@ -9,8 +9,8 @@ void tahu() {
 }
 
 void changeImage(String nama) {}
-
-Future<void> dialogku(context, okelah()) async {
+void okelah;
+Future<void> dialogku(context, okelah) async {
   log("Anda Menekan Tombol = ");
   return showDialog<void>(
     context: context,
@@ -28,6 +28,7 @@ Future<void> dialogku(context, okelah()) async {
             child: Text('Oke'),
             onPressed: () {
               Navigator.of(context).pop();
+              okelah('assets/images/ataskuning.png');
             },
           ),
         ],

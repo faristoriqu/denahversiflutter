@@ -1,6 +1,7 @@
 //import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutterku/denah/main.dart';
 //import 'package:flutterku/denah/main.dart';
 import 'package:flutterku/res/Strings.dart';
 
@@ -104,6 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // ),
             GestureDetector(
                 onTap: () {
+                  /**
                   return showDialog<void>(
                       context: context,
                       barrierDismissible: false, // user must tap button!
@@ -126,6 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         );
                       });
+                       */
+                  dialogku(context, pathChange);
                 },
                 child: Column(
                   children: <Widget>[Image.asset(kavlingdefault)],
