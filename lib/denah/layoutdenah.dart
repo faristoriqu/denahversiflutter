@@ -1,7 +1,7 @@
 //import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutterku/denah/main.dart';
+//import 'package:flutterku/denah/main.dart';
 import 'package:flutterku/res/Strings.dart';
 
 void main() {
@@ -50,6 +50,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String kavlingdefault = "assets/images/atas.png";
+  String atas = "assets/images/ataskuning.png";
+
+  void pathChange(newString) {
+    setState(() {
+      kavlingdefault = newString;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -58,6 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    //final nama = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -85,20 +96,39 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              Strings.beranda,
+              kavlingdefault,
             ),
-
-            // ignore: deprecated_member_use
-            FlatButton(
-                onPressed: () {
-                  String id = "apa";
-                  dialogku(context, id);
+            // TextFormField(
+            //   controller: nama,
+            //   decoration: InputDecoration(labelText: "masukkan nama"),
+            // ),
+            GestureDetector(
+                onTap: () {
+                  return showDialog<void>(
+                      context: context,
+                      barrierDismissible: false, // user must tap button!
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('Kavling no 1 '),
+                          content: SingleChildScrollView(
+                            child: ListBody(
+                              children: <Widget>[Text('Ingin Beli ?')],
+                            ),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              child: Text('Oke'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                                pathChange(atas);
+                              },
+                            ),
+                          ],
+                        );
+                      });
                 },
                 child: Column(
-                  children: <Widget>[
-                    Image.asset("assets/images/jalan.png"),
-                    Text("Coba")
-                  ],
+                  children: <Widget>[Image.asset(kavlingdefault)],
                 ))
           ],
         ),

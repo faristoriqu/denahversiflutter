@@ -8,28 +8,26 @@ void tahu() {
   log("data : $i");
 }
 
-Future<void> dialogku(context, id) async {
-  log("id = $id");
+void changeImage(String nama) {}
+
+Future<void> dialogku(context, okelah()) async {
+  log("Anda Menekan Tombol = ");
   return showDialog<void>(
     context: context,
     barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('AlertDialog Title'),
+        title: Text('Ini Adalah '),
         content: SingleChildScrollView(
           child: ListBody(
-            children: <Widget>[
-              Text('This is a demo alert dialog.'),
-              Text('Would you like to approve of this message?'),
-            ],
+            children: <Widget>[Text('Jalan ini tidak dijual')],
           ),
         ),
         actions: <Widget>[
           TextButton(
-            child: Text('Approve'),
+            child: Text('Oke'),
             onPressed: () {
               Navigator.of(context).pop();
-              log("approve");
             },
           ),
         ],
