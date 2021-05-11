@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "9472740510",
+    "project_id": "asc-auth-5deb7",
+    "storage_bucket": "asc-auth-5deb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9472740510:android:cf8c2c6849ca9af45f3f8f",
+        "android_client_info": {
+          "package_name": "com.example.flutterku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9472740510-3fk8js0rds8odurbkfuplfas5qs7boji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt4gMnCrjNIf30Dnx5ybqVqMwJCSy0xSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9472740510-3fk8js0rds8odurbkfuplfas5qs7boji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
