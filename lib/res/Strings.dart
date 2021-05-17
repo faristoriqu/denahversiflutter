@@ -6,4 +6,6 @@ class Strings {
   static const String home = "Beranda";
   static const String anonymous = "Anonymous";
   static const String logout = "Keluar";
+  static const String signup = "SignUp";
+  static const String upload = "Upload";
 }

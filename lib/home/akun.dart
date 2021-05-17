@@ -4,9 +4,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutterku/helper/auth_service.dart';
 import 'package:flutterku/res/Strings.dart';
 
-class HomePage extends StatelessWidget {
+class Akun extends StatelessWidget {
   final User user;
-  HomePage(this.user);
+  Akun(this.user);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           Text(user.uid),
           RaisedButton(
-            child: Text(Strings.upload),
+            child: Text(Strings.logout),
             onPressed: () async {
               await AuthServices.signOut();
             },

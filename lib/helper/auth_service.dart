@@ -10,8 +10,38 @@ class AuthServices {
 
   static Future<User> signInAnonymous() async {
     try {
-      UserCredential result = auth.signInAnonymously() as UserCredential;
-      User user = result.user;
+      // perubahan syntax
+      //firebaseuser  => user
+      //authresul => usercredential
+      //onAuthStateChanged => authStateChanges()
+      //https://stackoverflow.com/questions/59377277/undefined-class-authresult-in-flutter
+
+      UserCredential credential = auth.signInAnonymously() as UserCredential;
+      User user = credential.user;
+      return user;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+  static Future<User> signUp(String email, String password) async {
+    try {
+      UserCredential credential = await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      User user = credential.user;
+      return user;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+  static Future<User> signIn(String email, String password) async {
+    try {
+      UserCredential credential = await auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      User user = credential.user;
       return user;
     } catch (e) {
       print(e.toString());
