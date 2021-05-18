@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterku/home/akun.dart';
 import 'package:flutterku/home/home_page.dart';
+import 'package:flutterku/home/upload_page.dart';
 //import 'package:flutterku/login/login_page.dart';
 //import 'package:flutterku/res/Strings.dart';
 
@@ -20,9 +21,9 @@ class _MyStatefulWidgetState extends State<Beranda> {
 
   //List<Widget> _widgetOptions = <Widget>[HomePage(widget.user)];
 
-  List<Widget> _widgetOptions() {
+  List _widgetOptions() {
     return [
-      HomePage(widget.user),
+      UploadPage(),
       Akun(widget.user),
     ];
   }
@@ -44,26 +45,14 @@ class _MyStatefulWidgetState extends State<Beranda> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-            backgroundColor: Colors.purple,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Colors.pink,
+            icon: Icon(Icons.person),
+            label: 'Akun',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.blue[300],
         onTap: _onItemTapped,
       ),
     );
