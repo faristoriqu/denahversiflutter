@@ -32,10 +32,15 @@ class ParsingDataModel {
 
   final Xml2Json xml2Json = Xml2Json();
 
-  static void handleParsing(String file) async {
+  static void handleParsing(File file) async {
+    //print("check params = " + file);
     // final file = new File(await loadAsset());
-    // final document = XmlDocument.parse(file.readAsStringSync());
-    final document = XmlDocument.parse(await rootBundle.loadString(file));
+
+    // jika data dari local storage
+    final document = XmlDocument.parse(file.readAsStringSync());
+    // jika data dari assets
+    // final document = XmlDocument.parse(await loadAsset(file));
+
     // final title = document.findAllElements('title');
     final rect = document.findAllElements('rect');
     final polygon = document.findAllElements('polygon');
@@ -45,11 +50,28 @@ class ParsingDataModel {
     // rect.map((node) {
     //   return node.getAttribute('width');
     // }).forEach(inspect);
-    List<ShapeKavling> rectModel =
-        rect.map((node) => ShapeKavling.fromMap(node)).toList();
-    List<ShapeKavling> polygonModel =
-        polygon.map((node) => ShapeKavling.fromMap(node)).toList();
-    inspect(rectModel);
-    inspect(polygonModel);
+
+    if (rect.isEmpty) {
+      List<ShapeKavling> polygonModel =
+          polygon.map((node) => ShapeKavling.fromMap(node)).toList();
+      inspect(polygonModel);
+    } else if (polygon.isEmpty) {
+      List<ShapeKavling> rectModel =
+          rect.map((node) => ShapeKavling.fromMap(node)).toList();
+      inspect(rectModel);
+    } else {
+      List<ShapeKavling> rectModel =
+          rect.map((node) => ShapeKavling.fromMap(node)).toList();
+      List<ShapeKavling> polygonModel =
+          polygon.map((node) => ShapeKavling.fromMap(node)).toList();
+      //inspect(rectModel);
+      print("poly" + polygonModel.toString());
+    }
+    // List<ShapeKavling> rectModel =
+    //     rect.map((node) => ShapeKavling.fromMap(node)).toList();
+    // List<ShapeKavling> polygonModel =
+    //     polygon.map((node) => ShapeKavling.fromMap(node)).toList();
+    // inspect(rectModel);
+    // inspect(polygonModel);
   }
 }

@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 
 class UploadController {
   static Future<File> getImage() async {
-    return await ImagePicker.pickImage(
+    await ImagePicker.pickImage(
       source: ImageSource.gallery,
     );
   }
@@ -13,11 +13,15 @@ class UploadController {
   static Future getFile() async {
     File file = await FilePicker.getFile(
       type: FileType.custom,
-      allowedExtensions: ['svg', 'jpg'],
+      allowedExtensions: ['svg'],
     );
+
     if (file != null) {
-      print("filenya itu ini" + file.path);
-      ParsingDataModel.handleParsing(file.path);
+      print("path filenya itu ini = " + file.path);
+      //print("filenya Uri ini" + file.uri.toFilePath());
+      // ParsingDataModel.handleParsing("assets/images/kavling_2.svg");
+      // ParsingDataModel.handleParsing("assets/images/tahap1_canvas.svg");
+      ParsingDataModel.handleParsing(file);
     }
   }
 }
