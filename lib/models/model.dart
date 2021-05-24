@@ -89,7 +89,8 @@ class ShapeKavling {
   List string2double(String strings) {
     List list = strings.split(',').toList();
     List listDouble = [0.0, 0.0];
-    for (var i = 0; i < list.length; i++) {
+
+    for (var i = 0; i < listDouble.length; i++) {
       i == 0
           ? listDouble[i] = double.parse(list[i])
           : listDouble[i] = double.parse(list[i]);

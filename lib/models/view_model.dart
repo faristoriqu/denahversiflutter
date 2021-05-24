@@ -44,6 +44,21 @@ class ParsingDataModel {
     // final title = document.findAllElements('title');
     final rect = document.findAllElements('rect');
     final polygon = document.findAllElements('polygon');
+
+    // if (rect.isNotEmpty && polygon.isEmpty) {
+    //   print("rect saja");
+    //   inspect(rect);
+    // } else if (polygon.isNotEmpty && rect.isEmpty) {
+    //   print("polygon saja");
+    //   inspect(polygon);
+    // } else if (polygon.isEmpty && rect.isEmpty) {
+    //   print("invalid");
+    // } else {
+    //   print("rect dan polygon");
+    //   inspect(rect);
+    //   inspect(polygon);
+    // }
+
     // print(document.toString());
     // print(document.toXmlString(pretty: true, indent: '\t'));
     // inspect(rect);
@@ -51,27 +66,27 @@ class ParsingDataModel {
     //   return node.getAttribute('width');
     // }).forEach(inspect);
 
-    if (rect.isEmpty) {
-      List<ShapeKavling> polygonModel =
-          polygon.map((node) => ShapeKavling.fromMap(node)).toList();
-      inspect(polygonModel);
-    } else if (polygon.isEmpty) {
-      List<ShapeKavling> rectModel =
-          rect.map((node) => ShapeKavling.fromMap(node)).toList();
-      inspect(rectModel);
-    } else {
-      List<ShapeKavling> rectModel =
-          rect.map((node) => ShapeKavling.fromMap(node)).toList();
-      List<ShapeKavling> polygonModel =
-          polygon.map((node) => ShapeKavling.fromMap(node)).toList();
-      //inspect(rectModel);
-      print("poly" + polygonModel.toString());
-    }
-    // List<ShapeKavling> rectModel =
-    //     rect.map((node) => ShapeKavling.fromMap(node)).toList();
-    // List<ShapeKavling> polygonModel =
-    //     polygon.map((node) => ShapeKavling.fromMap(node)).toList();
-    // inspect(rectModel);
-    // inspect(polygonModel);
+    // if (rect.isEmpty) {
+    //   List<ShapeKavling> polygonModel =
+    //       polygon.map((node) => ShapeKavling.fromMap(node)).toList();
+    //   inspect(polygonModel);
+    // } else if (polygon.isEmpty) {
+    //   List<ShapeKavling> rectModel =
+    //       rect.map((node) => ShapeKavling.fromMap(node)).toList();
+    //   inspect(rectModel);
+    // } else {
+    //   List<ShapeKavling> rectModel =
+    //       rect.map((node) => ShapeKavling.fromMap(node)).toList();
+    //   List<ShapeKavling> polygonModel =
+    //       polygon.map((node) => ShapeKavling.fromMap(node)).toList();
+    //   //inspect(rectModel);
+    //   print("poly" + polygonModel.toString());
+    // }
+    List<ShapeKavling> rectModel =
+        rect.map((node) => ShapeKavling.fromMap(node)).toList();
+    List<ShapeKavling> polygonModel =
+        polygon.map((node) => ShapeKavling.fromMap(node)).toList();
+    inspect(rectModel);
+    inspect(polygonModel);
   }
 }
