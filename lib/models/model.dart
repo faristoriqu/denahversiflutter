@@ -51,7 +51,7 @@ class ShapeKavling {
     // inspect(doublePoint.reduce(min));
     // inspect(minWidth);
     // inspect(maxWidth);
-    inspect(listTest);
+    //inspect(listTest);
     return maxWidth - minWidth;
   }
 
@@ -77,7 +77,7 @@ class ShapeKavling {
   String findColorHex(String styles) {
     List<String> listStyle = styles.split(';');
     listStyle.forEach((element) {
-      if (element.contains('fill')) {
+      if (element.contains('fill:')) {
         int idx = element.indexOf('#');
         styles = element.substring(idx + 1, element.length);
       }
